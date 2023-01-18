@@ -1,6 +1,6 @@
 {
   "name": "create-cli-template",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "create-cli-template",
   "bin": {
     "create-cli-template": "bin/create-cli-template.mjs"
