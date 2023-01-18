@@ -1,11 +1,7 @@
 {
   "name": "create-cli-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "create-cli-template",
-  "main": "index.mjs",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "bin": {
     "create-cli-template": "bin/create-cli-template.mjs"
   },
@@ -13,5 +9,8 @@
     "template"
   ],
   "author": "blackawn",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "prompts": "^2.4.2"
+  }
 }
