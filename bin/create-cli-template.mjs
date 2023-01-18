@@ -4,12 +4,12 @@ import prompts from "prompts";
 import fs from "fs";
 import {downloadGitRepository, getGitRemoteRepositoryBranches} from "../utils/child-process.mjs";
 
-
 const repositoryUrl = "https://github.com/blackawn/create-cli-template.git"
 
 getGitRemoteRepositoryBranches(repositoryUrl, (branches) => {
 
   prompts([
+      // project name
     {
       type: 'text',
       name: 'projectName',
@@ -19,6 +19,7 @@ getGitRemoteRepositoryBranches(repositoryUrl, (branches) => {
           true :
           'Please enter a valid project name using only letters, numbers, dashes, or underscores.'
     },
+      // branches select
     {
       type: 'select',
       name: 'template',
@@ -30,6 +31,7 @@ getGitRemoteRepositoryBranches(repositoryUrl, (branches) => {
         }
       })
     },
+      // create sure
     {
       type: 'toggle',
       name: 'value',
@@ -45,9 +47,16 @@ getGitRemoteRepositoryBranches(repositoryUrl, (branches) => {
     if (!template || !value) return
 
     downloadGitRepository(repositoryUrl, template, projectName, () => {
+      // delete .git file
       const rmFile = `${projectName}/.git`;
       if (fs.existsSync(rmFile)) {
         fs.rmSync(rmFile, {recursive: true});
+      }
+      // change name to package.json
+      if (fs.existsSync(`${projectName}/package.json`)) {
+        const packageJson = JSON.parse(String(fs.readFileSync(`${projectName}/package.json`)));
+        packageJson.name = projectName;
+        fs.writeFileSync(`${projectName}/package.json`, JSON.stringify(packageJson, null, 2));
       }
     })
   });
