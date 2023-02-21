@@ -26,7 +26,7 @@ export function getGitRemoteRepositoryBranches(repo, callback) {
 
   exec(gitCommand, (error, stdout, stderr) => {
     if (error) {
-      console.error(`exec error: ${error}`);
+      console.error(error);
       return;
     }
     const branches = stdout.split('\n')

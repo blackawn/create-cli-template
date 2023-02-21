@@ -9,7 +9,7 @@ A scaffold for creating templates
 
 ## Usage
 ```shell
-npx cteate-cli-template
+npx create-cli-template
 ```
 
 ## Template
