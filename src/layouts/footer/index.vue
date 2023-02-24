@@ -1,8 +1,9 @@
 <script setup lang="ts">
 </script>
-
 <template>
-  <Router-View />
+  <div>
+    footer
+  </div>
 </template>
-
-<style scoped></style>
+<style>
+</style>
