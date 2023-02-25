@@ -2,7 +2,7 @@
 </script>
 <template>
   <div>
-    sider
+    Sider
   </div>
 </template>
 <style>

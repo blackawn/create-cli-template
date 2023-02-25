@@ -2,7 +2,7 @@
 </script>
 <template>
   <div>
-    footer
+    Footer
   </div>
 </template>
 <style>

@@ -2,7 +2,7 @@
 </script>
 <template>
   <div>
-    header
+    Header
   </div>
 </template>
 <style>

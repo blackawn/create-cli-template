@@ -39,7 +39,6 @@ export function useElementResizeObserver(element: Ref<HTMLElement | null> | HTML
     useResizeObserver.disconnect();
   }
 
-
   watch(() => (isRef(element) ? element.value : element), (newElement, oldElement) => {
     if (newElement) {
       if (oldElement) {
