@@ -1,7 +1,9 @@
 
 export default function Main () {
   return (
-    <div className='flex justify-center items-center'>
+    <div
+      className='flex items-center justify-center'
+    >
       Main
     </div>
   )

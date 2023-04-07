@@ -5,11 +5,17 @@ import Footer from '@/shared/Footer'
 
 function App () {
   return (
-    <div className='flex h-screen w-screen'>
+    <div
+      className='flex h-screen w-screen'
+    >
       <Sidebar />
-      <div className='flex flex-1 flex-col'>
+      <div
+        className='flex flex-1 flex-col'
+      >
         <Header />
-        <div className='flex-1'>
+        <div
+          className='flex-1'
+        >
           <Main />
         </div>
         <Footer />

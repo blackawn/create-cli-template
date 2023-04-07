@@ -1,6 +1,8 @@
 export default function Sidebar () {
   return (
-    <div className='h-96 flex justify-center items-center'>
+    <div
+      className='flex h-96 items-center justify-center'
+    >
       Footer
     </div>
   )
