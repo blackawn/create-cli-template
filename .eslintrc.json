@@ -22,6 +22,11 @@
   "plugins": [
     "react"
   ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
     "quotes": ["warn", "single"],
     "dot-notation": "warn",
@@ -44,8 +49,7 @@
     "react/jsx-max-props-per-line": ["warn", { "maximum": 1 }],
     "react/jsx-props-no-multi-spaces": ["warn"],
     "react/jsx-sort-props": "warn",
-    "react/jsx-space-before-closing": ["warn", "always"],
-    "react/jsx-tag-spacing": ["warn", { "beforeSelfClosing": "always" }],
+    "react/jsx-tag-spacing": ["error", { "beforeSelfClosing": "always" }],
     "react/jsx-indent": ["warn", 2, { "checkAttributes": true, "indentLogicalExpressions": true }],
     "react/jsx-indent-props": ["warn", 2],
     "react/jsx-one-expression-per-line": ["warn", {"allow": "literal"} ],
