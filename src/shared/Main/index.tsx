@@ -1,5 +1,5 @@
+export default function Main() {
 
-export default function Main () {
   return (
     <div
       className='flex items-center justify-center'
