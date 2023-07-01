@@ -2,7 +2,7 @@
 </script>
 <template>
   <div>
-    Sider
+    Slider
   </div>
 </template>
 <style>

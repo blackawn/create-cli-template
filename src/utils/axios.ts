@@ -15,7 +15,7 @@ function getAxiosInstanceKey(config: AxiosRequestConfig): string {
   return config.baseURL || '';
 }
 
-axiosInstance.interceptors.request.use((config: AxiosRequestConfig) => {
+axiosInstance.interceptors.request.use((config) => {
 
   return config;
 }, (error: AxiosError) => {

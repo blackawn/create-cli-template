@@ -1,11 +1,4 @@
-type Binding = {
-  value: {
-    mousedownCallback: (event: MouseEvent) => void
-    mouseupCallback: (event: MouseEvent) => void
-    mouseleaveCallback: (event: MouseEvent) => void
-    time: number
-  }
-}
+import { Binding } from './types';
 
 export const longPress = ((element: HTMLElement, binding: Binding) => {
   let timer: NodeJS.Timer | null = null;
