@@ -8,14 +8,20 @@ const themeStore = storeTheme();
 <template>
   <div>
     <n-space>
-      <n-button @click="themeStore.toggleTheme">
-        Default
+      <n-button @click="themeStore.setTheme('light')">
+        LightTheme
       </n-button>
-      <n-button type="tertiary">
-        Tertiary
+      <n-button
+        type="tertiary"
+        @click="themeStore.setTheme('dark')"
+      >
+        DarkTheme
       </n-button>
-      <n-button type="primary">
-        Primary
+      <n-button
+        type="primary"
+        @click="themeStore.setTheme('os')"
+      >
+        OsTheme
       </n-button>
       <n-button type="info">
         Info

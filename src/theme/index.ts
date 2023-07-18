@@ -1,4 +1,4 @@
-import { GlobalThemeOverrides } from 'naive-ui';
+import { GlobalThemeOverrides, darkTheme, lightTheme } from 'naive-ui';
 
 
 const lightThemeOverrides: GlobalThemeOverrides = {
@@ -16,7 +16,9 @@ const darkThemeOverrides: GlobalThemeOverrides = {
 
 export {
   lightThemeOverrides,
-  darkThemeOverrides
+  darkThemeOverrides,
+  darkTheme,
+  lightTheme
 };
 
 

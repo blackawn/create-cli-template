@@ -1,26 +1,32 @@
 import { defineStore } from 'pinia';
 import { useStorage } from '@vueuse/core';
+import { useOsTheme } from 'naive-ui';
 import type { Theme } from './types';
+import { watchEffect, WatchCallback } from 'vue';
 
 export const storeTheme = defineStore('themeStore', () => {
-  const theme = useStorage<Theme>('theme', 'light');
 
-  const setThemeLight = () => {
-    theme.value = 'light';
+  const osTheme = useOsTheme();
+
+  const themeStore = useStorage<Theme>('theme', osTheme.value as Theme);
+
+  let unwatch: any;
+
+  const setTheme = (theme: Theme) => {
+    unwatch?.();
+    if (theme === 'os'){
+      unwatch = watchEffect(() => {
+        themeStore.value = osTheme.value;
+      });
+      return;
+    }
+    themeStore.value = theme;
   };
 
-  const setThemeDark = () => {
-    theme.value = 'dark';
-  };
 
-  const toggleTheme = () => {
-    theme.value = theme.value === 'dark' ? 'light' : 'dark';
-  };
 
   return {
-    theme,
-    setThemeLight,
-    setThemeDark,
-    toggleTheme
+    theme: themeStore,
+    setTheme
   };
 });
