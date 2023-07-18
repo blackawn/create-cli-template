@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import Header from './header/index.vue';
-import Slider from './slider/index.vue';
+import Aside from './aside/index.vue';
 import Main from './main/index.vue';
 import Footer from './footer/index.vue';
 </script>
 <template>
-  <div class="flex flex-col h-screen dark:bg-neutral-900">
-    <Header class="flex justify-center items-center h-16 border-b" />
-    <div class="flex-1 flex">
-      <Slider class="flex justify-center items-center w-48 border-r" />
+  <div class="flex h-screen flex-col dark:bg-neutral-900">
+    <Header class="flex h-16 items-center justify-center border-b" />
+    <div class="flex flex-1">
+      <Aside class="flex w-48 items-center justify-center border-r" />
       <Main />
     </div>
-    <Footer class="flex justify-center items-center h-16 border-t" />
+    <Footer class="flex h-16 items-center justify-center border-t" />
   </div>
 </template>
 <style>

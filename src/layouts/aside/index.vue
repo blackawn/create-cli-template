@@ -2,7 +2,7 @@
 </script>
 <template>
   <div>
-    Slider
+    Aside
   </div>
 </template>
 <style>
