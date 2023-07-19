@@ -49,13 +49,13 @@ watch(() =>
 <template>
   <div
     ref="refSwitchBar"
-    class="flex p-0.5 h-full border border-gray-300 dark:border-neutral-600 rounded-full duration-300 cursor-pointer"
+    class="flex h-full cursor-pointer rounded-full border border-gray-300 p-0.5 duration-300 dark:border-neutral-600"
     :class="{ 'bg-gray-300 dark:bg-neutral-600': switchStatus }"
     @click="handleSwitchStatus"
   >
     <div
       ref="refSwitchDot"
-      class="w-3 h-full bg-gray-400 dark:bg-neutral-400 rounded-full"
+      class="h-full w-3 rounded-full bg-gray-400 dark:bg-neutral-400"
       :class="{'duration-300':isDuration}"
       :style="{ transform:`translateX(${switchStatus?maxTranslateX:0}px)`}"
     />

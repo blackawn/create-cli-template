@@ -36,8 +36,8 @@ router.beforeEach((to, from, next) => {
 
 // });
 
-export const routerList =
-  routes.find((item: any) => item.name === 'client')?.children?.filter((item: any) => item.meta.render);
+// export const routerList =
+//   routes.find((item: any) => item.name === 'client')?.children?.filter((item: any) => item.meta.render);
 
 export default router;
 
