@@ -1,26 +1,25 @@
 <script setup lang="ts">
 import Switch from '~/components/switch/index.vue';
-import { storeMode } from '~/store/mode';
+import { storeTheme } from '~/store/theme';
 import { getCurp } from '~/api';
 
+const themeStore = storeTheme();
 
-const useStoreMode = storeMode();
-
-const toggleMode = () => {
-  if (useStoreMode.mode === 'dark') {
-    useStoreMode.setMode('light');
+const toggleTheme = () => {
+  if (themeStore.theme === 'dark'){
+    themeStore.setTheme('light');
   } else {
-    useStoreMode.setMode('dark');
+    themeStore.setTheme('dark');
   }
-  setMode();
+  setTheme();
 };
 
-function setMode() {
+function setTheme() {
   document.documentElement.classList.remove('dark', 'light');
-  document.documentElement.classList.add(useStoreMode.mode);
+  document.documentElement.classList.add(themeStore.theme);
 }
 
-setMode();
+setTheme();
 
 
 const getA = () => getCurp({
@@ -52,11 +51,11 @@ const postA = () => getCurp({
     post
   </button>
   <br>
-  <span>{{ useStoreMode.mode }}</span>
-  <div class="w-10 h-5">
+  <span>{{ themeStore.theme }}</span>
+  <div class="h-5 w-10">
     <Switch
-      :status="useStoreMode.mode === 'dark'"
-      @update:switch-status="toggleMode"
+      :status="themeStore.theme === 'dark'"
+      @update:switch-status="toggleTheme"
     />
   </div>
 </template>
