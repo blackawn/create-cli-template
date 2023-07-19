@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 import { useStorage } from '@vueuse/core';
 import { useOsTheme } from 'naive-ui';
 import type { Theme } from './types';
-import { watchEffect, WatchCallback } from 'vue';
+import { watchEffect } from 'vue';
 
 export const storeTheme = defineStore('themeStore', () => {
 
@@ -22,8 +22,6 @@ export const storeTheme = defineStore('themeStore', () => {
     }
     themeStore.value = theme;
   };
-
-
 
   return {
     theme: themeStore,
