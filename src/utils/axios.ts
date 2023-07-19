@@ -1,11 +1,9 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosPromise, AxiosError } from 'axios';
-import { storeMode } from '~/store/theme';
 
 export const axiosInstance: AxiosInstance = axios.create({
   //baseURL: '/api',
   timeout: 10000,
   headers: {
-    'Mode': storeMode().mode
   }
 });
 
