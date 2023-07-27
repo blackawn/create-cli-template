@@ -10,7 +10,7 @@ export default function RouterGuard() {
   useEffect(() => {
     navigate('/shared/home')
     setInit(true)
-  }, [init])
+  }, [navigate])
 
   return (
     <MantineProvider
