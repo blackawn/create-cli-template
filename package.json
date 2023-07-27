@@ -12,13 +12,13 @@
     "lint:fix": "eslint ./src --fix"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.196",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.2"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.196",
     "@types/node": "^20.4.5",
     "@types/react": "^18.2.17",
     "@types/react-dom": "^18.2.7",
