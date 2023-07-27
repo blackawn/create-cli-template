@@ -13,6 +13,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: [
     '@typescript-eslint',
+    'react-hooks'
   ],
   parserOptions: {
     ecmaVersion: 'latest',
@@ -68,6 +69,10 @@ module.exports = {
     'react/no-direct-mutation-state': 'error',
     'react/no-typos': 'error',
     'react/no-unescaped-entities': 'error',
+
+    //
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
 
     //
     'tailwindcss/no-custom-classname': 'off'
