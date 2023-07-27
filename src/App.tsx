@@ -1,5 +1,5 @@
 import Header from '@/shared/Header'
-import Sidebar from '@/shared/Sidebar'
+import Aside from '@/shared/Aside'
 import Main from '@/shared/Main'
 import Footer from '@/shared/Footer'
 
@@ -8,7 +8,7 @@ function App () {
     <div
       className='flex h-screen w-screen'
     >
-      <Sidebar />
+      <Aside />
       <div
         className='flex flex-1 flex-col'
       >
