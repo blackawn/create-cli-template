@@ -37,7 +37,8 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-empty-function': 'warn',
     '@typescript-eslint/no-floating-promises': 'off',
-
+    '@typescript-eslint/no-unused-vars': 'warn',
+    
     //
     'react/react-in-jsx-scope': 'off',
     'react/jsx-closing-bracket-location': [1, 'line-aligned'],
