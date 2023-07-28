@@ -13,7 +13,7 @@ const emits = defineEmits(
   ['update:switch-status']
 );
 
-const refSwitchBar = ref<HTMLElement | null>(null);
+const refSwitchBar = ref<HTMLElement |  null>(null);
 const refSwitchDot = ref<HTMLElement | null>(null);
 
 const { width: refSwitchBarWidth } = useElementResizeObserver(refSwitchBar);
