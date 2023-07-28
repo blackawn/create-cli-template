@@ -7,7 +7,7 @@ export default function RouterGuard() {
   const [init, setInit] = useState(false)
 
   useEffect(() => {
-    navigate('/shared/home')
+    navigate('/layout/home')
     setInit(true)
   }, [navigate])
 
