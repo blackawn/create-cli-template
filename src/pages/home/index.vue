@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { NSpace, NButton } from 'naive-ui';
-import { storeTheme } from '~/store/theme';
+import { storeTheme } from '@/store/theme';
 
 const themeStore = storeTheme();
 </script>

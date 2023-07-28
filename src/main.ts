@@ -1,9 +1,9 @@
 import { createApp } from 'vue';
-import './style.css';
+import '@/styles/style.css';
 import App from './App.vue';
-import router from './routers';
+import router from './router';
 import store from './store';
-import { longPress } from '~/directive/long-press/long-press';
+import { longPress } from '@/directive/long-press/long-press';
 
 createApp(App)
   .use(router)

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { NLayout } from 'naive-ui';
 
-import TheHeader from './header/index.vue';
-import TheAside from './aside/index.vue';
-import TheMain from './main/index.vue';
-import TheFooter from './footer/index.vue';
+import TheHeader from './Header/index.vue';
+import TheAside from './Aside/index.vue';
+import TheMain from './Main/index.vue';
+import TheFooter from './Footer/index.vue';
 
 </script>
 <template>

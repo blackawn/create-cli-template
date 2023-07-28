@@ -9,7 +9,7 @@ const routes = [
     path: '/client',
     redirect: '/client/home',
     name: 'client',
-    component: () => import('~/layouts/index.vue'),
+    component: () => import('@/layout/index.vue'),
     children: [
       {
         path: '/client/home',
@@ -17,7 +17,7 @@ const routes = [
         meta: {
           title: 'home'
         },
-        component: () => import('~/pages/home/index.vue')
+        component: () => import('@/pages/Home/index.vue')
       }
     ]
   }
