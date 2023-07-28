@@ -1,10 +1,10 @@
 import { createHashRouter } from 'react-router-dom'
 import { lazy } from 'react'
-import Home from '@/pages/home'
-import Login from '@/pages/login'
+import Home from '@/pages/Home'
+import Login from '@/pages/Login'
 import RouterGuard from './RouterGuard'
 
-const LazyShared = lazy(() => import('@/shared'))
+const LazyShared = lazy(() => import('@/layout'))
 
 const Config = createHashRouter([
   {
@@ -12,7 +12,7 @@ const Config = createHashRouter([
     element: <RouterGuard />,
     children: [
       {
-        path: 'shared',
+        path: 'layout',
         element: <LazyShared />,
         children: [
           {

@@ -1,7 +1,7 @@
-import Header from '@/shared/Header'
-import Aside from '@/shared/Aside'
-import Main from '@/shared/Main'
-import Footer from '@/shared/Footer'
+import Header from '@/layout/Header'
+import Aside from '@/layout/Aside'
+import Main from '@/layout/Main'
+import Footer from '@/layout/Footer'
 
 export default function Shared() {
   return (
