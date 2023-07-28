@@ -4,7 +4,7 @@ import Home from '@/pages/Home'
 import Login from '@/pages/Login'
 import RouterGuard from './RouterGuard'
 
-const LazyShared = lazy(() => import('@/layout'))
+const LazyLayout = lazy(() => import('@/layout'))
 
 const Config = createHashRouter([
   {
@@ -13,7 +13,7 @@ const Config = createHashRouter([
     children: [
       {
         path: 'layout',
-        element: <LazyShared />,
+        element: <LazyLayout />,
         children: [
           {
             path: 'home',
