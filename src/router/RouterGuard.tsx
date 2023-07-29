@@ -1,5 +1,5 @@
 import { Outlet, useNavigate } from 'react-router-dom'
-import { MantineProvider } from '@mantine/core'
+
 import { useEffect,useState } from 'react'
 
 export default function RouterGuard() {
@@ -13,14 +13,6 @@ export default function RouterGuard() {
   }, [navigate])
 
   return (
-    <MantineProvider
-      theme={{
-        colorScheme: 'dark'
-      }}
-      withGlobalStyles
-      withNormalizeCSS
-    >
-      <Outlet />
-    </MantineProvider>
+    <Outlet />
   )
 }
