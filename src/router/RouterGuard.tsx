@@ -1,5 +1,5 @@
 import { Outlet, useNavigate } from 'react-router-dom'
-import { useEffect,useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function RouterGuard() {
   const navigate = useNavigate()
@@ -12,8 +12,6 @@ export default function RouterGuard() {
   }, [navigate])
 
   return (
-    <div>
-      <Outlet />
-    </div>
+    <Outlet />
   )
 }
