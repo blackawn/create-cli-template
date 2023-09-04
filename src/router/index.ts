@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
   {
@@ -9,7 +9,7 @@ const routes = [
     path: '/client',
     redirect: '/client/home',
     name: 'client',
-    component: () => import('~/layouts/index.vue'),
+    component: () => import('@/layout/index.vue'),
     children: [
       {
         path: '/client/home',
@@ -18,26 +18,25 @@ const routes = [
           title: '首页',
           render: true
         },
-        component: () => import('~/pages/home/index.vue')
+        component: () => import('@/pages/home/index.vue')
       }
     ]
   }
-];
+]
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes
-});
+})
 
-router.beforeEach((to: any, from, next) => {
-  next();
-});
+router.beforeEach((to, from, next) => {
+  next()
+})
 router.afterEach((to, from) => {
 
-});
+})
 
 export const routerList =
-  routes.find((item: any) => item.name === 'client')?.children?.filter((item: any) => item.meta.render);
+  routes.find((item) => item.name === 'client')?.children?.filter((item) => item.meta.render)
 
-export default router;
-
+export default router

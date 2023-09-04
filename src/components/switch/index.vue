@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch, computed } from 'vue';
-import { useElementResizeObserver } from '~/composables/useElementResizeObserver';
+import { useElementResizeObserver } from '@/composables/useElementResizeObserver';
 
 const props = defineProps({
   status: {

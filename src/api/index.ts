@@ -1,4 +1,3 @@
-import { axiosInstance } from '~/utils/axios';
+import { axiosInstance } from '@/utils/axios'
 
-
-export const getCurp = (config: any) => axiosInstance(config);
+export const getCurp = (config: any) => axiosInstance(config)

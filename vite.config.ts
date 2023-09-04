@@ -9,7 +9,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '~': path.resolve(__dirname, 'src')
+      '@': path.resolve(__dirname, 'src')
     }
   },
   // server: {
@@ -24,5 +24,5 @@ export default defineConfig({
   //     },
   //   }
   // },
-  base: './'
+  envPrefix: 'VITE_'
 });

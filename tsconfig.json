@@ -16,8 +16,8 @@
       "node_modules/@types",
     ],
     "paths":{
-      "~": ["src"],
-      "~/*": ["src/*"]
+      "@": ["src"],
+      "@/*": ["src/*"]
     },
     "baseUrl": "./"
   },

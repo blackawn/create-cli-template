@@ -1,31 +1,30 @@
 <script setup lang="ts">
-import Switch from '~/components/switch/index.vue';
-import { storeTheme } from '~/store/theme';
-import { getCurp } from '~/api';
+import Switch from '@/components/switch/index.vue'
+import { storeTheme } from '@/store/theme'
+import { getCurp } from '@/api'
 
-const themeStore = storeTheme();
+const themeStore = storeTheme()
 
 const toggleTheme = () => {
-  if (themeStore.theme === 'dark'){
-    themeStore.setTheme('light');
+  if (themeStore.theme === 'dark') {
+    themeStore.setTheme('light')
   } else {
-    themeStore.setTheme('dark');
+    themeStore.setTheme('dark')
   }
-  setTheme();
-};
-
-function setTheme() {
-  document.documentElement.classList.remove('dark', 'light');
-  document.documentElement.classList.add(themeStore.theme);
+  setTheme()
 }
 
-setTheme();
+function setTheme() {
+  document.documentElement.classList.remove('dark', 'light')
+  document.documentElement.classList.add(themeStore.theme)
+}
 
+setTheme()
 
 const getA = () => getCurp({
   method: 'GET',
   url: 'https://jsonplaceholder.typicode.com/posts/1'
-});
+})
 
 const postA = () => getCurp({
   method: 'POST',
@@ -35,11 +34,10 @@ const postA = () => getCurp({
     body: 'bar',
     userId: 1
   },
-  validateStatus: function(status: any) {
-    return status < 500; // Reject only if the status code is greater than or equal to 500
+  validateStatus: function (status: any) {
+    return status < 500 // Reject only if the status code is greater than or equal to 500
   }
-});
-
+})
 
 </script>
 <template>
