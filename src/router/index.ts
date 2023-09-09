@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-const routes = [
+export const routeConfig = [
   {
     path: '/',
     redirect: '/client'
@@ -16,9 +16,18 @@ const routes = [
         name: 'home',
         meta: {
           title: '首页',
-          render: true
+          tarbarIcon: 'flag-o',
         },
         component: () => import('@/pages/home/index.vue')
+      },
+      {
+        path: '/client/mine',
+        name: 'mine',
+        meta: {
+          title: '我的',
+          tarbarIcon: 'contact',
+        },
+        component: () => import('@/pages/mine/index.vue')
       }
     ]
   }
@@ -26,7 +35,7 @@ const routes = [
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes: routeConfig
 })
 
 router.beforeEach((to, from, next) => {
@@ -36,8 +45,5 @@ router.beforeEach((to, from, next) => {
 router.afterEach((to, from, failure) => {
   console.log(failure)
 })
-
-export const routerList =
-  routes.find((item) => item.name === 'client')?.children?.filter((item) => item.meta.render)
 
 export default router

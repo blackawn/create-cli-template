@@ -1,12 +1,12 @@
 import { defineStore } from 'pinia'
 import { useStorage } from '@vueuse/core'
-import type { Theme } from './types'
+import type { ConfigProviderTheme } from 'vant'
 
 export const storeTheme = defineStore('themeStore', () => {
 
-  const themeStore = useStorage<Theme>('theme', 'dark')
+  const themeStore = useStorage<ConfigProviderTheme>('theme', 'dark')
 
-  const setTheme = (theme: Theme) => {
+  const setTheme = (theme: ConfigProviderTheme) => {
     themeStore.value = theme
   }
 
