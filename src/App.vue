@@ -13,7 +13,7 @@ const themeStore = storeTheme()
     :theme-vars-light="themeVarsLight"
     :theme="themeStore.theme"
   >
-    <router-view />
+    <RouterView />
   </ConfigProvider>
 </template>
 
