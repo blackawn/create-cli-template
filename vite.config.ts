@@ -28,6 +28,9 @@ export default defineConfig((config) => {
         },
       }
     },
+    esbuild:{
+      drop: ['console', 'debugger']
+    },
     envPrefix: 'VITE_'
   }
 });
