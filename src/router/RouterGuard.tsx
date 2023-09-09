@@ -1,15 +1,6 @@
-import { Outlet, useNavigate } from 'react-router-dom'
-import { useEffect,useState } from 'react'
+import { Outlet } from 'react-router-dom'
 
 export default function RouterGuard() {
-  const navigate = useNavigate()
-
-  const [init, setInit] = useState(false)
-
-  useEffect(() => {
-    navigate('/layout/home')
-    setInit(true)
-  }, [navigate])
 
   return (
     <div>
