@@ -1,30 +1,30 @@
-import { defineStore } from 'pinia';
-import { useStorage } from '@vueuse/core';
-import { useOsTheme } from 'naive-ui';
-import type { Theme } from './types';
-import { watchEffect } from 'vue';
+import { defineStore } from 'pinia'
+import { useStorage } from '@vueuse/core'
+import { useOsTheme } from 'naive-ui'
+import type { Theme } from './types'
+import { watchEffect, WatchStopHandle } from 'vue'
 
 export const storeTheme = defineStore('themeStore', () => {
 
-  const osTheme = useOsTheme();
+  const osTheme = useOsTheme()
 
-  const themeStore = useStorage<Theme>('theme', osTheme.value as Theme);
+  const themeStore = useStorage<Theme>('theme', osTheme.value as Theme)
 
-  let unwatch: any;
+  let unWatch: WatchStopHandle
 
   const setTheme = (theme: Theme) => {
-    unwatch?.();
+    unWatch?.()
     if (theme === 'os'){
-      unwatch = watchEffect(() => {
-        themeStore.value = osTheme.value;
-      });
-      return;
+      unWatch = watchEffect(() => {
+        themeStore.value = osTheme.value
+      })
+      return
     }
-    themeStore.value = theme;
-  };
+    themeStore.value = theme
+  }
 
   return {
     theme: themeStore,
     setTheme
-  };
-});
+  }
+})

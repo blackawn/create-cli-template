@@ -1,6 +1,6 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router'
 
-const routes = [
+const routeConfig = [
   {
     path: '/',
     redirect: '/client'
@@ -17,27 +17,23 @@ const routes = [
         meta: {
           title: 'home'
         },
-        component: () => import('@/pages/Home/index.vue')
+        component: () => import('@/pages/home/index.vue')
       }
     ]
   }
-];
+]
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
-});
+  routes: routeConfig
+})
 
 router.beforeEach((to, from, next) => {
-  next();
-});
+  next()
+})
 
-// router.afterEach((to, from) => {
+router.afterEach((to, from, failure) => {
+  console.log(failure)
+})
 
-// });
-
-// export const routerList =
-//   routes.find((item: any) => item.name === 'client')?.children?.filter((item: any) => item.meta.render);
-
-export default router;
-
+export default router

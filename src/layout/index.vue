@@ -1,23 +1,23 @@
 <script setup lang="ts">
-import { NLayout } from 'naive-ui';
+import { NLayout } from 'naive-ui'
 
-import TheHeader from './Header/index.vue';
-import TheAside from './Aside/index.vue';
-import TheMain from './Main/index.vue';
-import TheFooter from './Footer/index.vue';
+import Header from './header/index.vue'
+import Aside from './aside/index.vue'
+import Main from './main/index.vue'
+import Footer from './footer/index.vue'
 
 </script>
 <template>
-  <n-layout>
+  <NLayout>
     <div class="flex h-screen flex-col">
-      <the-header />
+      <Header />
       <div class="flex flex-1">
-        <the-aside />
-        <the-main />
+        <Aside />
+        <Main />
       </div>
-      <the-footer />
+      <Footer />
     </div>
-  </n-layout>
+  </NLayout>
 </template>
 <style>
 </style>

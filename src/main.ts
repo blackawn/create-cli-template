@@ -1,12 +1,12 @@
-import { createApp } from 'vue';
-import '@/styles/style.css';
-import App from './App.vue';
-import router from './router';
-import store from './store';
-import { longPress } from '@/directive/long-press/long-press';
+import { createApp } from 'vue'
+import '@/styles/style.css'
+import App from './App.vue'
+import router from './router'
+import store from './store'
+import { longPress } from '@/directive/long-press/long-press'
 
 createApp(App)
   .use(router)
   .use(store)
   .directive('long-press', longPress)
-  .mount('#app');
+  .mount('#app')

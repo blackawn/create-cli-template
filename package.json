@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint ./src",
+    "lint:debug": "eslint ./src --debug",
+    "lint:fix": "eslint ./src --fix"
   },
   "dependencies": {
     "@vueuse/core": "^10.2.1",
