@@ -1,4 +1,4 @@
-import { ref, isRef, onMounted, onUnmounted, watch } from 'vue'
+import { ref, isRef, onMounted, onBeforeUnmount, watch } from 'vue'
 import type { Ref } from 'vue'
 
 export function useElementResizeObserver(element: Ref<HTMLElement | null> | HTMLElement) {
@@ -51,7 +51,7 @@ export function useElementResizeObserver(element: Ref<HTMLElement | null> | HTML
     resizeObserver(element)
   })
 
-  onUnmounted(() => {
+  onBeforeUnmount(() => {
     unResizeObserver(element)
   })
 
