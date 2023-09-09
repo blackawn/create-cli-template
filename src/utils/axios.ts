@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosPromise, AxiosError } from 'axios'
+import axios, { AxiosInstance, AxiosResponse, AxiosError } from 'axios'
 
 export const axiosInstance: AxiosInstance = axios.create({
   baseURL: import.meta.env.VITE_APP_API_URL,
@@ -6,12 +6,6 @@ export const axiosInstance: AxiosInstance = axios.create({
   headers: {
   }
 })
-
-const axiosInstanceMap: Map<string, AxiosInstance> = new Map()
-
-function getAxiosInstanceKey(config: AxiosRequestConfig): string {
-  return config.baseURL || ''
-}
 
 axiosInstance.interceptors.request.use((config) => {
 

@@ -1,28 +1,33 @@
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import * as path from 'path';
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [
-    vue()
-  ],
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src')
-    }
-  },
-  // server: {
-  //   host: '0.0.0.0',
-  //   port: 5173,
-  //   proxy: {
-  //     '/api': {
-  //       target: 'http://localhost:3000',
-  //       ws: true,
-  //       changeOrigin: true,
-  //       rewrite: (path: string) => path.replace(/^\/api/, '/')
-  //     },
-  //   }
-  // },
-  envPrefix: 'VITE_'
+export default defineConfig((config) => {
+
+  const env = loadEnv(config.mode, process.cwd())
+
+  return {
+    plugins: [
+      vue()
+    ],
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src')
+      }
+    },
+    server: {
+      host: '0.0.0.0',
+      port: 5173,
+      proxy: {
+        '/api': {
+          target: env.VITE_APP_API_URL,
+          ws: true,
+          changeOrigin: true,
+          rewrite: (path: string) => path.replace(/^\/api/, '/')
+        },
+      }
+    },
+    envPrefix: 'VITE_'
+  }
 });

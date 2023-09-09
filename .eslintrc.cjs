@@ -37,9 +37,11 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/no-explicit-any': 'warn',
+    '@typescript-eslint/ban-types': 'warn',
 
     //
     'vue/custom-event-name-casing': 'off',
-    'vue/multi-word-component-names': 'off'
+    'vue/multi-word-component-names': 'off',
+    'vue/no-unused-vars': 'warn'
   }
-};
+}

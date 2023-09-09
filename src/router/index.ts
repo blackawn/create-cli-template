@@ -32,8 +32,9 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   next()
 })
-router.afterEach((to, from) => {
 
+router.afterEach((to, from, failure) => {
+  console.log(failure)
 })
 
 export const routerList =

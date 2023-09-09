@@ -1,36 +1,36 @@
 <script setup lang="ts">
-import { ref, watch, computed } from 'vue';
-import { useElementResizeObserver } from '@/composables/useElementResizeObserver';
+import { ref, watch, computed } from 'vue'
+import { useElementResizeObserver } from '@/composables/useElementResizeObserver'
 
 const props = defineProps({
   status: {
     type: Boolean,
     default: false
   }
-});
+})
 
 const emits = defineEmits(
   ['update:switch-status']
-);
+)
 
-const refSwitchBar = ref<HTMLElement | null>(null);
-const refSwitchDot = ref<HTMLElement | null>(null);
+const refSwitchBar = ref<HTMLElement | null>(null)
+const refSwitchDot = ref<HTMLElement | null>(null)
 
-const { width: refSwitchBarWidth } = useElementResizeObserver(refSwitchBar);
-const { width: refSwitchWidth } = useElementResizeObserver(refSwitchDot);
+const { width: refSwitchBarWidth } = useElementResizeObserver(refSwitchBar)
+const { width: refSwitchWidth } = useElementResizeObserver(refSwitchDot)
 
-const switchStatus = ref<boolean>(props.status);
-const isDuration = ref<boolean>(false);
+const switchStatus = ref<boolean>(props.status)
+const isDuration = ref<boolean>(false)
 
 const maxTranslateX = computed(() => {
-  return (refSwitchBarWidth.value || 0) - (refSwitchWidth.value || 0);
-});
+  return (refSwitchBarWidth.value || 0) - (refSwitchWidth.value || 0)
+})
 
 const handleSwitchStatus = () => {
-  isDuration.value = true;
-  switchStatus.value = !switchStatus.value;
-  emits('update:switch-status', switchStatus.value);
-};
+  isDuration.value = true
+  switchStatus.value = !switchStatus.value
+  emits('update:switch-status', switchStatus.value)
+}
 
 watch(() =>
   [
@@ -38,12 +38,11 @@ watch(() =>
     maxTranslateX.value
   ],
 (value, oldValue) => {
-  switchStatus.value = value[0] as boolean;
+  switchStatus.value = value[0] as boolean
   if (value[1] !== oldValue[1]) {
-    isDuration.value = false;
+    isDuration.value = false
   }
-});
-
+})
 
 </script>
 <template>

@@ -1,7 +1,7 @@
 import { Binding } from './types'
 
 export const longPress = ((element: HTMLElement, binding: Binding) => {
-  let timer: NodeJS.Timer | null = null
+  let timer: ReturnType<typeof setTimeout> | null = null
   element.addEventListener('mousedown', (event: MouseEvent) => {
     timer = setTimeout(() => {
       event.preventDefault()
