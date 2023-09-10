@@ -29,7 +29,7 @@
     "autoprefixer": "^10.4.14",
     "eslint": "^8.45.0",
     "eslint-plugin-react": "^7.33.0",
-    "eslint-plugin-react-hooks": "5.0.0-canary-493f72b0a-20230727",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-tailwindcss": "^3.13.0",
     "postcss": "^8.4.27",
     "tailwindcss": "^3.3.3",
