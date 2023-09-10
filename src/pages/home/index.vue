@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import Switch from '@/components/switch/index.vue'
 import { storeTheme } from '@/store/theme'
 import { getCurp } from '@/api'
+import { ref } from 'vue'
+import { useElementResizeObserver } from '@/composables/useElementResizeObserver'
 
 const themeStore = storeTheme()
 
@@ -39,6 +40,10 @@ const postA = () => getCurp({
   }
 })
 
+const spanRef = ref<HTMLDivElement | null>(null)
+
+const { width, height } = useElementResizeObserver(spanRef)
+
 </script>
 <template>
   <button @click="getA">
@@ -49,6 +54,16 @@ const postA = () => getCurp({
     post
   </button>
   <br>
-  <span @click="toggleTheme">{{ themeStore.theme }}</span>
+  <div>
+    {{
+      width
+    }}
+  </div>
+  <div
+    ref="spanRef"
+    @click="toggleTheme"
+  >
+    {{ themeStore.theme }}
+  </div>
 </template>
 <style></style>
