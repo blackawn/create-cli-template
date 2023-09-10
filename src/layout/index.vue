@@ -6,12 +6,12 @@ import Footer from './footer/index.vue'
 </script>
 <template>
   <div class="flex h-screen flex-col dark:bg-neutral-900">
-    <Header class="flex h-16 items-center justify-center border-b" />
+    <Header class="flex h-16 items-center justify-center" />
     <div class="flex flex-1">
-      <Aside class="flex w-48 items-center justify-center border-r" />
+      <Aside class="flex w-48 items-center justify-center" />
       <Main />
     </div>
-    <Footer class="flex h-16 items-center justify-center border-t" />
+    <Footer class="flex h-16 items-center justify-center" />
   </div>
 </template>
 <style></style>

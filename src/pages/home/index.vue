@@ -49,12 +49,6 @@ const postA = () => getCurp({
     post
   </button>
   <br>
-  <span>{{ themeStore.theme }}</span>
-  <div class="h-5 w-10">
-    <Switch
-      :status="themeStore.theme === 'dark'"
-      @update:switch-status="toggleTheme"
-    />
-  </div>
+  <span @click="toggleTheme">{{ themeStore.theme }}</span>
 </template>
 <style></style>
