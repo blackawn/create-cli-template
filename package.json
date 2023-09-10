@@ -1,6 +1,6 @@
 {
   "name": "create-cli-template",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "create-cli-template",
   "bin": {
     "create-cli-template": "bin/create-cli-template.mjs"
@@ -10,6 +10,14 @@
   ],
   "author": "blackawn",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blackawn/create-cli-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blackawn/create-cli-template/issues"
+  },
+  "homepage": "https://github.com/blackawn/create-cli-template#readme",
   "dependencies": {
     "prompts": "^2.4.2"
   }

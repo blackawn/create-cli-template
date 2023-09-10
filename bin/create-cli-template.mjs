@@ -3,33 +3,36 @@
 import prompts from "prompts";
 import path from "path";
 import fs from "fs";
+import { language } from '../i18n/index.mjs';
 import { downloadGitRepository, getGitRemoteRepositoryBranches } from "../utils/child-process.mjs";
 
-const repositoryUrl = "https://github.com/blackawn/create-cli-template.git"
+const repositoryUrl = "https://github.com/blackawn/create-cli-template.git";
 
 const currentDir = path.resolve('.');
 const isRootDir = currentDir === path.parse(currentDir).root;
 
 getGitRemoteRepositoryBranches(repositoryUrl, (branches) => {
 
+  const locale = Intl.DateTimeFormat().resolvedOptions().locale;
+
   prompts([
     // project name
     {
       type: 'text',
       name: 'projectName',
-      message: 'What is the name of your project?',
+      message: language[locale] ? language[locale].message1 : language['en-US'].message1,
       initial: 'project-template',
       validate: async (value) => {
         if (value === '.') {
           if (!isRootDir) {
             return true;
           } else {
-            return 'Invalid directory path. Please enter a valid project name using only letters, numbers, dashes, or underscores.';
+            return language[locale] ? language[locale].error1 : language['en-US'].error1;
           }
         } else if (value.match(/^[a-zA-Z0-9-_]+$/)) {
           return true;
         } else {
-          return 'Please enter a valid project name using only letters, numbers, dashes, or underscores.';
+          return language[locale] ? language[locale].error2 : language['en-US'].error2;
         }
       }
     },
@@ -37,7 +40,7 @@ getGitRemoteRepositoryBranches(repositoryUrl, (branches) => {
     {
       type: 'select',
       name: 'template',
-      message: 'What template do you want to use?',
+      message: language[locale] ? language[locale].message2 : language['en-US'].message2,
       choices: branches.map(branch => {
         return {
           title: branch,
@@ -49,7 +52,7 @@ getGitRemoteRepositoryBranches(repositoryUrl, (branches) => {
     {
       type: 'toggle',
       name: 'value',
-      message: 'Are you sure you want to create this project?',
+      message: language[locale] ? language[locale].message3 : language['en-US'].message3,
       initial: true,
       active: 'yes',
       inactive: 'no'
@@ -69,16 +72,16 @@ getGitRemoteRepositoryBranches(repositoryUrl, (branches) => {
       deleteFile.forEach(async (file) => {
         const filePath = `${projectName}/${file}`
         if (fs.existsSync(filePath)) {
-          fs.rmSync(filePath, {recursive: true});
+          fs.rmSync(filePath, { recursive: true });
         }
       });
 
       // change name to package.json
       if (fs.existsSync(`${projectName}/package.json`)) {
         const packageJson = JSON.parse(String(fs.readFileSync(`${projectName}/package.json`)));
-        packageJson.name = 
-          projectName === '.' ? 
-          path.basename(process.cwd()) : projectName;
+        packageJson.name =
+          projectName === '.' ?
+            path.basename(process.cwd()) : projectName;
         fs.writeFileSync(`${projectName}/package.json`, JSON.stringify(packageJson, null, 2));
       }
     })

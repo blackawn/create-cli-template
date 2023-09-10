@@ -14,7 +14,9 @@ npx create-cli-template
 
 ## Template
 * [vite-react-ts](https://github.com/blackawn/create-cli-template/tree/vite-react-ts)
-* [vite-react-mantineui-ts](https://github.com/blackawn/create-cli-template/tree/vite-react-mantineui-ts)
+* [vite-react-antd-ts](https://github.com/blackawn/create-cli-template/tree/vite-react-antd-ts)
+* [vite-react-mantine-ts](https://github.com/blackawn/create-cli-template/tree/vite-react-mantine-ts)
 * [vite-vue-ts](https://github.com/blackawn/create-cli-template/tree/vite-vue-ts)
-* [vite-vue-naiveui-ts](https://github.com/blackawn/create-cli-template/tree/vite-vue-naiveui-ts)
+* [vite-vue-naive-ts](https://github.com/blackawn/create-cli-template/tree/vite-vue-naive-ts)
+* [vite-vue-vant-ts](https://github.com/blackawn/create-cli-template/tree/vite-vue-vant-ts)
 

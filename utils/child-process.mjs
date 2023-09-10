@@ -1,9 +1,9 @@
-import {spawn,exec} from 'child_process';
+import { spawn, exec } from 'child_process';
 
 export function downloadGitRepository(repo, branches, destination, callback) {
 
   const getRepoDownload =
-      spawn('git', ['clone', '--progress', '--depth', '1', '-b', branches, repo, destination]);
+    spawn('git', ['clone', '--progress', '--depth', '1', '-b', branches, repo, destination]);
 
   getRepoDownload.stdout.on('data', (data) => {
     console.log(`stdout: ${data}`);
@@ -30,9 +30,9 @@ export function getGitRemoteRepositoryBranches(repo, callback) {
       return;
     }
     const branches = stdout.split('\n')
-        .filter(x => x.indexOf('refs/heads/master') === -1)
-        .filter(x => x !== '')
-        .map(x => x.split('\t')[1].replace('refs/heads/', ''));
+      .filter(x => x.indexOf('refs/heads/master') === -1)
+      .filter(x => x !== '')
+      .map(x => x.split('\t')[1].replace('refs/heads/', ''));
     callback(branches);
   });
 }
